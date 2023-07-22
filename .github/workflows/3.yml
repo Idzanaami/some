@@ -56,7 +56,7 @@
            report_paths: '**/target/surefire-reports/TEST-*.xml'
           
        - name: 'print'
-         run: echo REPORT "${{ github.workspace }}"
+         run: echo REPORT "${{ github.run_number }}"
    
        - name: Send email
          uses: dawidd6/action-send-mail@v3
