@@ -55,13 +55,13 @@
          with:
            report_paths: '**/target/surefire-reports/TEST-*.xml'
            
-       - name: 'print'
-         run: ls
-          
        - name: 'zip'
          uses: montudor/action-zip@v1
          with:
            args: zip qq -r allure-report.zip allure-report
+           
+       - name: 'print'
+         run: ls
         
        - name: Send email
          uses: dawidd6/action-send-mail@v3
@@ -72,7 +72,7 @@
            username: ${{ secrets.EMAIL_USERNAME }}
            password: ${{ secrets.EMAIL_PASSWORD }}
            subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
-           body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }} <br> ALL TESTS COUNT IS "${{steps.report.outputs.total}}" FAILED TESTS IS "${{steps.report.outputs.failed}}" PASS TESTS IS "${{steps.report.outputs.passed}}"
-           to: ${{ secrets.EMAIL_USERNAME }}
+           body: \*\* ${{ github.job }} \*\* job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }} <br> ALL TESTS COUNT IS "${{steps.report.outputs.total}}" FAILED TESTS IS "${{steps.report.outputs.failed}}" PASS TESTS IS "${{steps.report.outputs.passed}}"
+           to: ${{ secrets.EMAIL_USERNAME }}, on8d@yandex.ru
            attachments: allure-report.zip
            from: John Doe
