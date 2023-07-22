@@ -56,7 +56,9 @@
            report_paths: '**/target/surefire-reports/TEST-*.xml'
           
        - name: 'print'
-         run: echo REPORT "${{ github.run_number }}"
+         run: |
+          cd allure-report
+          ls
    
        - name: Send email
          uses: dawidd6/action-send-mail@v3
