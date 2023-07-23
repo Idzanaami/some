@@ -57,7 +57,7 @@
          uses: actions/upload-artifact@v3
          with: 
            name: allure-report-art
-#            path: allure-report-art-zip
+           path: allure-report-art-zip
            
        - name: ls after upload
          run: ls
@@ -67,6 +67,7 @@
          uses: actions/download-artifact@v3
          with:
            name: allure-report-art
+           path: allure-report-art-zip
         
        - name: ls after dowload
          run: ls
