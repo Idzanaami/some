@@ -65,6 +65,7 @@
          uses: actions/download-artifact@v3
         
        - name: dowlload
+         id: dowlload
          uses: actions/download-artifact@v3
          with:
            name: allure-report-art
@@ -83,6 +84,6 @@
            subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
            html_body: \\*\\* ${{ github.job }} <p> job in worflow <\p> \\*\\* ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }} <br> ALL TESTS COUNT IS "${{steps.report.outputs.total}}" FAILED TESTS IS "${{steps.report.outputs.failed}}" PASS TESTS IS "${{steps.report.outputs.passed}}"
            to: ${{ secrets.EMAIL_USERNAME }}, ${{ secrets.EMAIL_USERNAME2 }}
-           attachments: allure-report-art
+           attachments: "${{steps.dowlload.outputs}}"
            convert_markdown: true
            from: John Doe
