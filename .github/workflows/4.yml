@@ -64,11 +64,10 @@
        - name: Download all workflow run artifacts
          uses: actions/download-artifact@v3
         
-        
-#        - name: dowlload
-#          uses: actions/download-artifact@v3
-#          with:
-#            name: allure-report-art
+       - name: dowlload
+         uses: actions/download-artifact@v3
+         with:
+           name: allure-report-art
         
 #        - name: Create a temporary artifact downloads folder
 #          run: ls
