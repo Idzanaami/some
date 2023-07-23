@@ -70,8 +70,8 @@
 #          with:
 #            name: allure-report-art
         
-#        - name: Create a temporary artifact downloads folder
-#          run: ls
+       - name: Create a temporary artifact downloads folder
+         run: ls
         
        - name: Send email
          uses: dawidd6/action-send-mail@v3
