@@ -60,13 +60,8 @@
            path: allure-report
 
        - name: ls
-         run: ls
-         
-       - name: cd
-         run: cd allure-report/
-         
-       - name: ls
-         run: ls       
+         run: echo "${{steps.build.id}}" "${{steps.build.name}} "
+             
          
        - name: Send email
          uses: dawidd6/action-send-mail@v3
