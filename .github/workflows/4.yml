@@ -64,10 +64,8 @@
            name: allure-report-art
            path: downloads
            
-       - name: Create a temporary artifact downloads folder
-         run: |
-           cd downloads/
-           ls
+       - name: Download all workflow run artifacts
+         uses: actions/download-artifact@v3
         
         
 #        - name: dowlload
