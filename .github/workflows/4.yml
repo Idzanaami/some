@@ -57,20 +57,20 @@
          uses: actions/upload-artifact@v3
          with: 
            name: allure-report-art
-           path: allure-report-art-zip
+           path: allure-report
            
        - name: ls after upload
          run: ls
          
-       - name: dowlload
-         id: dowlload
-         uses: actions/download-artifact@v3
-         with:
-           name: allure-report-art
-           path: allure-report-art
+#        - name: dowlload
+#          id: dowlload
+#          uses: actions/download-artifact@v3
+#          with:
+#            name: allure-report-art
+#            path: allure-report-art
         
-       - name: ls after dowload
-         run: ls
+#        - name: ls after dowload
+#          run: ls
         
        - name: Send email
          uses: dawidd6/action-send-mail@v3
@@ -81,7 +81,7 @@
            username: ${{ secrets.EMAIL_USERNAME }}
            password: ${{ secrets.EMAIL_PASSWORD }}
            subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
-           html_body:  <p> ${{ github.job }} job in worflow <p> ${{ github.workflow }} of ${{ github.repository }} has <b> ${{ job.status }} </b> <br> ALL TESTS COUNT IS <b> "${{steps.report.outputs.total}}" </b> <br> FAILED TESTS IS <b> "${{steps.report.outputs.failed}}" </b> <br> PASS TESTS IS <b> "${{steps.report.outputs.passed}}" </b> 
+           html_body:  GITHUB ACTIONS <br> PROJECT IS ${{ github.repository }} ${{ github.job }} <br> WORKFLOW IS ${{ github.workflow }} <br> STATUS IS <b> ${{ job.status }} </b> <br> ALL TESTS COUNT IS <b> "${{steps.report.outputs.total}}" </b> <br> FAILED TESTS IS <b> "${{steps.report.outputs.failed}}" </b> <br> PASS TESTS IS <b> "${{steps.report.outputs.passed}}" </b> 
            to: ${{ secrets.EMAIL_USERNAME }}, ${{ secrets.EMAIL_USERNAME2 }}
 #            attachments: "${{steps.upload.outputs}}"
            convert_markdown: true
