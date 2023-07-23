@@ -62,7 +62,7 @@
          uses: actions/upload-artifact@v3
          with: 
            name: allure-report-art
-           path: downloads
+           path: allure-report
            
        - name: Download all workflow run artifacts
          uses: actions/download-artifact@v3
