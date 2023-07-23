@@ -65,7 +65,11 @@
            path: downloads
            
        - name: Create a temporary artifact downloads folder
-         run: ls
+         run: | 
+           ls
+           cd downloads
+           ls
+        
         
 #        - name: dowlload
 #          uses: actions/download-artifact@v3
