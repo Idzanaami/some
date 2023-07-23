@@ -57,10 +57,12 @@
          uses: actions/upload-artifact@v3
          with: 
            name: "allure-report-art"
-           path: artifacts/*
+           path: allure-report
            
        - name: ls after upload
-         run: ls
+         run: |
+           cd ./allure-report-art/
+           ls
          
        - name: dowlload
          id: dowlload
