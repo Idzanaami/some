@@ -68,7 +68,7 @@
          id: dowlload
          uses: actions/download-artifact@v3
          with:
-           name: "allure-report-art"
+           name: allure-report-art
 #            path: allure-report-art
         
        - name: ls after dowload
