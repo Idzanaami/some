@@ -1,1 +1,0 @@
-{"total":2,"items":[{"uid":"c8d0d03e67e8c62b91a9499cca777b77","name":"tests.LogoutTest","statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1}},{"uid":"b8a1897df3d29960caf77946f8f50379","name":"tests.UniversalLoginTest","statistic":{"failed":0,"broken":0,"skipped":0,"passed":9,"unknown":0,"total":9}}]}
