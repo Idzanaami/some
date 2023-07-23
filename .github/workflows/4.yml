@@ -60,7 +60,7 @@
          uses: actions/upload-artifact@v3
          with: 
            name: allure-report-art
-           path: allure-report
+           path: allure-report-art-zip
            
        - name: ls after upload
          run: ls
