@@ -60,7 +60,7 @@
            path: allure-report
 
        - name: ls
-         run: echo "${{steps.build.id}}" "${{steps.build.name}} "
+         run: echo "${{steps.upload.id}}" "${{steps.upload.name}} "
              
          
        - name: Send email
