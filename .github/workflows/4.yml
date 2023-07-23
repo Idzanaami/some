@@ -63,6 +63,9 @@
          with: 
            name: allure-report
            path: downloads
+           
+       - name: Create a temporary artifact downloads folder
+         run: ls
         
        - name: Send email
          uses: dawidd6/action-send-mail@v3
