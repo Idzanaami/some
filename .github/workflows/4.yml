@@ -61,7 +61,13 @@
 
        - name: ls
          run: ls
-        
+         
+       - name: cd
+         run: cd allure-report
+         
+       - name: ls
+         run: ls       
+         
        - name: Send email
          uses: dawidd6/action-send-mail@v3
          if: always()
