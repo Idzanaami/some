@@ -81,7 +81,7 @@
            username: ${{ secrets.EMAIL_USERNAME }}
            password: ${{ secrets.EMAIL_PASSWORD }}
            subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
-           html_body:  FROM GITHUB ACTIONS <br> PROJECT IS ${{ github.repository }} ${{ github.job }} <br> WORKFLOW IS ${{ github.workflow }} <br> STATUS IS <b> ${{ job.status }} </b> <br> ALL TESTS COUNT IS <b> "${{steps.report.outputs.total}}" </b> <br> FAILED TESTS IS <b> "${{steps.report.outputs.failed}}" </b> <br> PASS TESTS IS <b> "${{steps.report.outputs.passed}}" </b> <br> LINK TO ARTIFACT https://github.com/${{ github.ref }}
+           html_body:  FROM GITHUB ACTIONS <br> PROJECT IS ${{ github.repository }} ${{ github.job }} <br> WORKFLOW IS ${{ github.workflow }} <br> STATUS IS <b> ${{ job.status }} </b> <br> ALL TESTS COUNT IS <b> "${{steps.report.outputs.total}}" </b> <br> FAILED TESTS IS <b> "${{steps.report.outputs.failed}}" </b> <br> PASS TESTS IS <b> "${{steps.report.outputs.passed}}" </b> <br> LINK TO ARTIFACT https://github.com/${{ github.repository }}/blob/${{ github.ref }}/artifacts/my_artifact.zip
            to: ${{ secrets.EMAIL_USERNAME }}, ${{ secrets.EMAIL_USERNAME2 }}
            attachments: ./*.zip
            convert_markdown: true
