@@ -65,8 +65,7 @@
            path: downloads
            
        - name: Create a temporary artifact downloads folder
-         run: | 
-           ls
+         run: 
            cd downloads
            ls
         
