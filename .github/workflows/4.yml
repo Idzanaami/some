@@ -63,7 +63,15 @@
          with: 
            name: allure-report
            path: downloads
-           
+        
+       - name: dowlload
+         uses: actions/download-artifact@v3
+         with:
+           name: my-artifact
+    
+       - name: Display structure of downloaded files
+         run: ls -R
+        
        - name: Create a temporary artifact downloads folder
          run: ls
         
@@ -78,6 +86,6 @@
            subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
            html_body: \*\* ${{ github.job }} job in worflow \*\* ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }} <br> ALL TESTS COUNT IS "${{steps.report.outputs.total}}" FAILED TESTS IS "${{steps.report.outputs.failed}}" PASS TESTS IS "${{steps.report.outputs.passed}}"
            to: ${{ secrets.EMAIL_USERNAME }}, ${{ secrets.EMAIL_USERNAME2 }}
-           attachments: downloads
+           attachments: allure-report
            convert_markdown: true
            from: John Doe
