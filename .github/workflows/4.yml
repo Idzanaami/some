@@ -56,8 +56,8 @@
          id: upload
          uses: actions/upload-artifact@v3
          with: 
-           name: allure-report-art
-           path: allure-report
+           name: "allure-report-art"
+           path: artifacts/*
            
        - name: ls after upload
          run: ls
