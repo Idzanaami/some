@@ -62,16 +62,16 @@
            name: allure-report-art
            path: allure-report
            
-       - name: Download all workflow run artifacts
-         uses: actions/download-artifact@v3
-        
+       - name: ls after upload
+         run: ls
+         
        - name: dowlload
          id: dowlload
          uses: actions/download-artifact@v3
          with:
            name: allure-report-art
         
-       - name: ls
+       - name: ls after dowload
          run: ls
         
        - name: Send email
@@ -83,8 +83,8 @@
            username: ${{ secrets.EMAIL_USERNAME }}
            password: ${{ secrets.EMAIL_PASSWORD }}
            subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
-           html_body: \\*\\* ${{ github.job }} <p> job in worflow <\p> \\*\\* ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }} <br> ALL TESTS COUNT IS "${{steps.report.outputs.total}}" FAILED TESTS IS "${{steps.report.outputs.failed}}" PASS TESTS IS "${{steps.report.outputs.passed}}"
+           html_body: ${{ github.job }} <p> job in worflow <\p>  ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }} <br> ALL TESTS COUNT IS "${{steps.report.outputs.total}}" FAILED TESTS IS "${{steps.report.outputs.failed}}" PASS TESTS IS "${{steps.report.outputs.passed}}"
            to: ${{ secrets.EMAIL_USERNAME }}, ${{ secrets.EMAIL_USERNAME2 }}
-           attachments: "${{steps.upload.outputs}}"
+#            attachments: "${{steps.upload.outputs}}"
            convert_markdown: true
            from: John Doe
