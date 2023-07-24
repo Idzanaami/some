@@ -1,6 +1,8 @@
  name: allure-junit5-maven
 
- on: [ push ]
+ on: 
+  schedule: 
+    - cron: '*/48 13 * * *'
 
  jobs:
    build:
